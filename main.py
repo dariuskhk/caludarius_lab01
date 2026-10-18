@@ -22,9 +22,20 @@ def afisare_matrice(matrice):
     for rand in matrice:
         print(rand)
 
+def citire_sir_fisier():
+    nume_fisier = input("Introduceti numele fisierului: ")
+    try:
+        with open(nume_fisier, "r") as f:
+            sir_fisier = f.read()
+            print("Sirul citit din fisier este:", sir_fisier)
+    except FileNotFoundError:
+        print("Fisierul nu exista!")
+
 if __name__ == "__main__":
-    sir= citire_sir()
+    sir = citire_sir()
     matrice = citire_matrice()
     afisare_sir(sir)
     afisare_matrice(matrice)
+    citire_sir_fisier()
 
+    
